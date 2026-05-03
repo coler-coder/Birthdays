@@ -1,0 +1,69 @@
+# Program that stores friends birthdays in the dictionary
+from _pyrepl.commands import delete
+
+
+def main():
+    birthdays = {}
+    choice = 0
+    while choice != 5:
+        print('\nBirthday Dictionary')
+        print('1. Look up a birthday')
+        print('2. Add a new birthday')
+        print('3. Change a birthday')
+        print('4. Delete a birthday')
+        print('5. Quit')
+
+        choice = int(input('Enter your choice: '))
+        if choice == 1:
+            lookup(birthdays)
+        elif choice == 2:
+            add(birthdays)
+        elif choice == 3:
+            change(birthdays)
+        elif choice == 4:
+            delete(birthdays)
+        elif choice == 5:
+            print('Goodbye')
+        else:
+            print('Invalid choice. Try again.')
+#Look up a birthday
+def lookup(birthdays):
+    name = input("Enter your friend's name: ")
+
+    if name in birthdays:
+        print(name + "'s birthday is " + birthdays[name])
+    else:
+        print("That name is not in the dictionary.")
+# Add a new birthday
+def add(birthdays):
+    name = input("Enter your friend's name: ")
+    birthday = input("Enter their birthday: ")
+
+    birthdays[name] = birthday
+    print("Birthday added.")
+
+
+# Change an existing birthday
+def change(birthdays):
+    name = input("Enter the name to change: ")
+
+    if name in birthdays:
+        birthday = input("Enter the new birthday: ")
+        birthdays[name] = birthday
+        print("Birthday updated.")
+    else:
+        print("That name is not in the dictionary.")
+
+
+# Delete a birthday
+def delete(birthdays):
+    name = input("Enter the name to delete: ")
+
+    if name in birthdays:
+        del birthdays[name]
+        print("Entry deleted.")
+    else:
+        print("That name is not in the dictionary.")
+
+
+main()
