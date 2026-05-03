@@ -1,0 +1,1 @@
+This project is a menu-driven Python program that manages a dictionary of friends’ birthdays. It allows users to look up, add, update, and delete birthday entries through different menu options. The program uses functions to organize each task and repeatedly prompts the user until they choose to quit, making it a simple example of dictionary operations and user interaction.
